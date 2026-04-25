@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BethTune Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-container">
+        <nav class="top-nav">
+            <button class="nav-btn" id="browse-btn"><i class="fas fa-search"></i> Browse</button>
+        </nav>
+
+        <div id="search-container" class="search-hidden">
+            <input type="text" id="search-input" placeholder="Search for music...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+
+        <div class="album-layering-container">
+            <div class="album-card back-left" data-artist="Justin Bieber"><img src="images/justin bieber.jpg" alt="JB"></div>
+            <div class="album-card mid-left" data-artist="The Weeknd"><img src="images/the weekend.jpg" alt="The Weeknd"></div>
+            <div class="album-card center-focus active" data-artist="BTS"><img src="images/bts.jpg" alt="BTS"></div>
+            <div class="album-card mid-right" data-artist="Blackpink"><img src="images/blackpink.jpg" alt="Blackpink"></div>
+            <div class="album-card back-right" data-artist="Lany"><img src="images/lany.jpg" alt="Lany"></div>
+        </div>
+
+        <div class="main-content">
+            <section class="list-section">
+                <h3 id="list-title">Next Up</h3>
+                <div id="song-list-container"></div>
+            </section>
+            
+            <section class="list-section">
+                <h3>Vibe Check</h3>
+                <div class="vibe-grid">
+                    <div class="vibe-btn" data-vibe="chill">
+                        <i class="fas fa-moon"></i>
+                        <div><span class="title">Midnight Therapy</span><br><small>Mellow & Moody</small></div>
+                    </div>
+                    <div class="vibe-btn" data-vibe="hype">
+                        <i class="fas fa-bolt"></i>
+                        <div><span class="title">Main Character</span><br><small>High Energy Hits</small></div>
+                    </div>
+                    <div class="vibe-btn" data-vibe="focus">
+                        <i class="fas fa-brain"></i>
+                        <div><span class="title">Deep Focus</span><br><small>Study & Flow</small></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="player-bar">
+            <div class="controls">
+                <i class="fas fa-step-backward" id="prev-btn"></i>
+                <i class="fas fa-play" id="play-pause-btn"></i>
+                <i class="fas fa-step-forward" id="next-btn"></i>
+            </div>
+            <div class="now-playing">
+                <span id="current-title">Select a song</span>
+                <span id="current-artist">Artist Name</span>
+            </div>
+
+            <div class="progress-area">
+                <span id="current-time">0:00</span>
+                <div class="progress-container">
+                    <input type="range" id="progress-bar" min="0" max="100" value="0">
+                </div>
+                <span id="duration-time">0:00</span>
+            </div>
+
+            <div class="extra-controls">
+                <div class="volume-container">
+                    <i class="fas fa-volume-up" id="volume-icon"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </footer>
+    </div>
+    <audio id="main-audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
